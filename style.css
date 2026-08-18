@@ -1,77 +1,317 @@
-/* --------------------
-        全体
--------------------- */
-
-:root {
-  --theme-color: #00a0a0;
-}
-
 * {
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 30px;
-  color: #333;
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff3ff,
+            #f8e8ff
+        );
+
+    color: #333;
 }
 
-/* --------------------
-        見出し
--------------------- */
+.container {
+    width: 90%;
+    max-width: 900px;
 
-h1, h2, h3 {
-  color: var(--theme-color);
-  border-bottom: dashed 0.1em var(--theme-color);
-}
+    margin: 0 auto;
 
-/* --------------------
-        リンク
--------------------- */
-
-a {
-  color: var(--theme-color);
-  text-decoration: none;
+    padding: 40px 0;
 }
 
-/* --------------------
-        リスト
--------------------- */
 
-ul {
-  list-style: none;
-}
-li:before {
-  content: "★";
-  color: var(--theme-color);
+/* ヘッダー */
+
+header {
+    text-align: center;
+
+    margin-bottom: 30px;
 }
 
-/* --------------------
-          表
--------------------- */
+header h1 {
+    margin: 0 0 10px;
 
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  border: solid 1px #f0f0f0;
-  min-width: 70%;
+    font-size: 38px;
 }
-tr {
-  background-color: #fff;
+
+header p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 16px;
 }
-tr:nth-child(2n) {
-  background-color: #f9f9f9;
+
+
+/* カード */
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
 }
-th {
-  background: var(--theme-color);
-  color: #fff;
+
+.card h2 {
+    margin-top: 0;
+
+    font-size: 28px;
 }
-th, td {
-  border: solid 1px #f0f0f0;
-  padding: 0.5rem;
+
+
+/* おみくじ */
+
+.fortune-box {
+    width: 190px;
+    height: 190px;
+
+    margin: 25px auto;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffcc70,
+            #ff8177
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 36px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* おみくじアニメーション */
+
+.fortune-box.shaking {
+    animation: shake 0.12s infinite;
+}
+
+.fortune-box.result-animation {
+    animation: pop 0.5s;
+}
+
+
+/* ボタン */
+
+button {
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        opacity 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#fortuneButton {
+    padding: 14px 30px;
+
+    font-size: 18px;
+
+    background: #4a90e2;
+
+    color: white;
+}
+
+
+/* 結果 */
+
+.fortune-result {
+    margin-top: 25px;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+.fortune-result strong {
+    font-size: 20px;
+}
+
+#fortuneComment {
+    margin-top: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* 動画 */
+
+.video-section {
+    animation: slideUp 0.6s;
+}
+
+.video-section.hidden {
+    display: none;
+}
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    height: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+#videoTitle {
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+/* アニメーション */
+
+@keyframes shake {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+
+    75% {
+        transform: rotate(-8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes pop {
+
+    0% {
+        transform: scale(0.6);
+
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideUp {
+
+    0% {
+        transform: translateY(30px);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+
+
+/* スマートフォン */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .fortune-box {
+        width: 160px;
+        height: 160px;
+
+        font-size: 30px;
+    }
 }
