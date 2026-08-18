@@ -1,57 +1,98 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <title>youkiのポートフォリオ</title>
-  </head>
-  <body>
-  <img src="unnamed.png" width="200">
-  <h1>youki</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>今日のおみくじ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>今日のおみくじ</h1>
+            <p>あなたの今日の運勢を占ってみよう！</p>
+        </header>
+
+        <main>
+
+            <!-- おみくじ -->
+            <section class="card fortune-section">
+
+                <h2>おみくじ</h2>
+
+                <div id="fortuneBox" class="fortune-box">
+                    <span id="fortuneText">？？？</span>
+                </div>
+
+                <button id="fortuneButton">
+                    おみくじを引く
+                </button>
+
+                <!-- 結果 -->
+                <div id="fortuneResult" class="fortune-result">
+
+                    <p>
+                        運勢：
+                        <strong id="fortuneName">---</strong>
+                    </p>
+
+                    <p>
+                        ラッキーカラー：
+                        <strong id="luckyColor">---</strong>
+                    </p>
+
+                    <p>
+                        ラッキーアイテム：
+                        <strong id="luckyItem">---</strong>
+                    </p>
+
+                    <p id="fortuneComment">
+                        おみくじを引いてみましょう！
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- おすすめ動画 -->
+            <section
+                id="videoSection"
+                class="card video-section hidden">
+
+                <h2>あなたへのおすすめ動画</h2>
+
+                <p id="videoDescription">
+                    今日の運勢に合わせた動画です。
+                </p>
+
+                <div class="video-container">
+
+                    <iframe
+                        id="youtubeVideo"
+                        src=""
+                        title="おすすめ動画"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <p id="videoTitle"></p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
-
-    <h2>About</h2>
-    <p>
-ゲームやネットサーフィンが好き
-    </p>
-
-    <h3>Profile</h3>
-    <ul>
-      <li>youki</li>
-      <li>神奈川県</li>
-      <li>PC・ガジェット</li>
-    </ul>
-
-    <h3>Skills</h3>
-    <table>
-      <tr>
-        <th>OS</th>
-        <td>Windows</td>
-      </tr>
-      <tr>
-      </tr>
-      <tr>
-        <th>Tool</th>
-        <td>GitHub, GitHub Pages</td>
-      </tr>
-    </table>
-
-    <h3>Works</h3>
-<p>
-  中学生・高校生向けに、プログラミングの基礎やeスポーツについて教える活動を行っています。
-  分かりやすい説明を心がけながら、学習のサポートに取り組んでいます。
-</p>
-
-   <h3>Achievements</h3>
-<table>
-  <tr>
-    <th>高校時代</th>
-    <td>eスポーツ大会に出場し、準優勝を経験</td>
-  </tr>
-</table>
-    <h3>好きな動画</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-Xh4BNbxpI8?si=TlX_ud9AY6meniu3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <h3>Open Processing</h3>
-   <iframe src="https://openprocessing.org/sketch/2961480/embed/" width="400" height="400"></iframe>
